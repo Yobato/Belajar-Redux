@@ -1,13 +1,25 @@
 {
   "users": [
     {
-      "id": 1,
-      "nama": "Andika",
-      "tinggal": "jakarta"
-    },
-    {
       "nama": "Channy",
       "tinggal": "Batam",
+      "id": 2
+    },
+    {
+      "nama": "Dhito",
+      "tinggal": "Yogya",
+      "id": 3
+    }
+  ],
+  "article": [
+    {
+      "judul": "Will Smith Smack Chris",
+      "penerbit": "Fox News",
+      "id": 1
+    },
+    {
+      "judul": "Conditional Term between Ukraine and Russia",
+      "penerbit": "BBC News",
       "id": 2
     }
   ],

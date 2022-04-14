@@ -1,16 +1,18 @@
-import { useState, createContext, useReducer } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Login from './pages/Login/Login';
-import Home from './pages/Home/Home';
-import About from './pages/About/About';
-import Users from './pages/Users/Users';
-import './App.css';
-import { Provider } from 'react-redux';
-import store from './redux/store';
+import { useState, createContext, useReducer } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Login from "./pages/Login/Login";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Users from "./pages/Users/Users";
+import Article from "./pages/Article/Article";
+import "./App.css";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 
 export const AppContext = createContext({
-  nama: '',
+  nama: "",
   setNama: () => {},
 });
 
@@ -18,9 +20,9 @@ const initialState = { count: 0 };
 
 function AppReducer(state, action) {
   switch (action.type) {
-    case 'increment':
+    case "increment":
       return { count: state.count + 1 };
-    case 'decrement':
+    case "decrement":
       return { count: state.count - 1 };
     default:
       throw new Error();
@@ -28,7 +30,7 @@ function AppReducer(state, action) {
 }
 
 function App() {
-  const [nama, setNama] = useState('adam');
+  const [nama, setNama] = useState("adam");
   const theme = createTheme();
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
@@ -50,8 +52,9 @@ function App() {
                 <Route path="home" element={<Home />} />
                 <Route path="about" element={<About />} />
                 <Route path="users" element={<Users />} />
+                <Route path="article" element={<Article />} />
                 <Route
-                  path="*"  
+                  path="*"
                   element={
                     <>
                       <h1>Page Not Found</h1>
